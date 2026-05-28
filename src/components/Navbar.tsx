@@ -24,7 +24,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      const sections = ['overview', 'projects-section', 'live-sandbox', 'experience-section', 'skills-section', 'map-section'];
+      const sections = ['overview', 'projects-section', 'experience-section', 'skills-section', 'map-section'];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -62,7 +62,6 @@ export default function Navbar({ onContactClick }: NavbarProps) {
   const menuItems = [
     { id: 'overview', label: 'Overview' },
     { id: 'projects-section', label: 'Projects' },
-    { id: 'live-sandbox', label: 'Sandbox' },
     { id: 'experience-section', label: 'Experience' },
     { id: 'skills-section', label: 'Skills' },
     { id: 'map-section', label: 'Map' }

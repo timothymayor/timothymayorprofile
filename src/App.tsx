@@ -39,7 +39,6 @@ import {
   SKILL_CATEGORIES 
 } from './data';
 import Navbar from './components/Navbar';
-import InteractivePlayground from './components/InteractivePlayground';
 import MapSection from './components/MapSection';
 
 export default function App() {
@@ -181,11 +180,11 @@ export default function App() {
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-4">
                 <button
-                  onClick={() => handleScrollToSection('live-sandbox')}
+                  onClick={() => handleScrollToSection('projects-section')}
                   className="px-5 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs tracking-wide uppercase transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm"
                 >
-                  <Terminal className="w-4 h-4 text-white" />
-                  Launch Sandbox
+                  <Cpu className="w-4 h-4 text-white" strokeWidth={2.5} />
+                  Explore Projects
                 </button>
                 <button
                   onClick={() => handleScrollToSection('experience-section')}
@@ -446,13 +445,13 @@ export default function App() {
 
                     </div>
 
-                    {/* CTA button to test simulator */}
+                    {/* CTA button to consult on project */}
                     <button
-                      onClick={() => handleScrollToSection('live-sandbox')}
+                      onClick={() => handleScrollToSection('contact-section')}
                       className={`w-full py-3 px-4 rounded-lg font-mono text-xs font-bold text-center border flex items-center justify-center gap-2 cursor-pointer transition-all ${themeClass}`}
                     >
-                      <span>Trigger Simulation API</span>
-                      <ArrowDown className="w-3.5 h-3.5" />
+                      <span>Inquire About Project</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
 
                   </div>
@@ -465,12 +464,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Interactive Simulation Sandbox centerpiece */}
-      <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InteractivePlayground />
-        </div>
-      </section>      {/* Professional Timeline / Work Experience section */}
+      {/* Professional Timeline / Work Experience section */}
       <section id="experience-section" className="py-20 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
