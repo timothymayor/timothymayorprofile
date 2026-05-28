@@ -40,6 +40,7 @@ import {
 } from './data';
 import Navbar from './components/Navbar';
 import MapSection from './components/MapSection';
+import BlogSection from './components/BlogSection';
 
 export default function App() {
   const [activeSkillCategory, setActiveSkillCategory] = useState<string>('All');
@@ -187,10 +188,10 @@ export default function App() {
                   Explore Projects
                 </button>
                 <button
-                  onClick={() => handleScrollToSection('experience-section')}
+                  onClick={() => handleScrollToSection('contact-section')}
                   className="px-5 py-3 rounded-lg bg-white border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-50 font-bold text-xs tracking-wide uppercase transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-sm"
                 >
-                  Inspect Work History
+                  Hire Me
                 </button>
               </div>
             </div>
@@ -644,22 +645,8 @@ export default function App() {
       {/* Map / Operational Reach Section */}
       <MapSection />
 
-      {/* Print CV Callout block */}
-      <section className="py-12 bg-slate-50 border-b border-slate-200 print:hidden text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <Printer className="w-8 h-8 text-indigo-600 mx-auto" />
-          <h3 className="font-display font-extrabold text-slate-850">Need a Physical Copy of Timothy's CV?</h3>
-          <p className="text-xs text-slate-600 max-w-md mx-auto font-semibold">
-            This portfolio was designed targeting perfect standard CSS media print layout formatting. Click print to generate an elegant multi-page PDF matching original layouts.
-          </p>
-          <button
-            onClick={() => window.print()}
-            className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 hover:shadow shadow-sm rounded-lg font-mono text-xs font-bold text-white transition-all cursor-pointer"
-          >
-            PRINT FULL PDF CV
-          </button>
-        </div>
-      </section>
+      {/* Blog & Thought Leadership Insights Section */}
+      <BlogSection />
 
       {/* Consult API simulated contact form centerpiece */}
       <section id="contact-section" className="py-20 bg-slate-50">
@@ -672,10 +659,10 @@ export default function App() {
               <div>
                 <span className="font-mono text-xs tracking-widest text-indigo-600 uppercase font-bold block mb-2">Connect Directly</span>
                 <h3 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
-                  Consult API Integrator
+                  AI Solutions Consultant
                 </h3>
-                <p className="text-xs text-slate-600 font-semibold mt-3 leading-relaxed">
-                  Have a deployment challenge or consulting proposal? Use Timothy's live-connected contact simulator to trigger asynchronous pipeline ingestion workflows.
+                <p className="text-xs text-slate-650 font-semibold mt-3 leading-relaxed">
+                  Have an AI integration challenge, data pipeline bottleneck, or consulting proposal? Use Timothy's live-connected contact simulator to trigger asynchronous ingestion workflows. Whether you need highly optimized semantic search (RAG) models, secure agentic state-machine workflows, or custom LLM API pipelines, reach out to secure a reliable operational launch.
                 </p>
               </div>
 
