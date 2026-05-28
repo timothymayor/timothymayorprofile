@@ -36,11 +36,11 @@ import {
   PERSONAL_INFO, 
   PROJECTS, 
   WORK_EXPERIENCE, 
-  SKILL_CATEGORIES, 
-  EDUCATION_EDUCATION 
+  SKILL_CATEGORIES 
 } from './data';
 import Navbar from './components/Navbar';
 import InteractivePlayground from './components/InteractivePlayground';
+import MapSection from './components/MapSection';
 
 export default function App() {
   const [activeSkillCategory, setActiveSkillCategory] = useState<string>('All');
@@ -647,60 +647,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Education / Credentials Section */}
-      <section id="education-section" className="py-20 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="font-mono text-xs tracking-widest text-indigo-600 uppercase font-bold">Formal Credentials & Training</span>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Education & Certifications
-            </h2>
-            <p className="text-sm text-slate-650 font-medium font-medium">
-              Timothy couples formal training in Business Administration and accounting with extensive digital architecture and professional agile scrum certifications.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {EDUCATION_EDUCATION.map((edu, idx) => (
-              <div 
-                key={idx}
-                className="p-6 bg-white border border-slate-200 rounded-2xl flex justify-between relative hover:border-indigo-400 hover:shadow-md transition-all duration-300 shadow-sm"
-              >
-                <div className="space-y-3">
-                  <span className="font-mono text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
-                    {edu.institution}
-                  </span>
-                  
-                  <h4 className="font-display text-sm font-extrabold text-slate-800 leading-snug">
-                    {edu.title}
-                  </h4>
-
-                  {edu.major && (
-                    <p className="text-xs text-slate-500 font-sans flex items-center gap-1 font-semibold">
-                      <AcademicCapIcon />
-                      Major Focus: {edu.major}
-                    </p>
-                  )}
-                </div>
-
-                <div className="text-right flex flex-col justify-between shrink-0 pl-4">
-                  <span className="font-mono text-[10px] text-indigo-600 font-bold border border-indigo-150 rounded bg-indigo-50 px-2 py-0.5 self-end">
-                    {edu.date}
-                  </span>
-                  
-                  {edu.title.includes('Scrum') && (
-                    <span className="text-[9px] font-mono text-slate-450 flex items-center gap-1 font-bold">
-                      <Award className="w-3.5 h-3.5 text-slate-500" /> SCRUM_ORG
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      {/* Map / Operational Reach Section */}
+      <MapSection />
 
       {/* Print CV Callout block */}
       <section className="py-12 bg-slate-50 border-b border-slate-200 print:hidden text-center">

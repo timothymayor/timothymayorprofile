@@ -24,7 +24,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      const sections = ['overview', 'projects-section', 'live-sandbox', 'experience-section', 'skills-section', 'education-section'];
+      const sections = ['overview', 'projects-section', 'live-sandbox', 'experience-section', 'skills-section', 'map-section'];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -65,7 +65,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
     { id: 'live-sandbox', label: 'Sandbox' },
     { id: 'experience-section', label: 'Experience' },
     { id: 'skills-section', label: 'Skills' },
-    { id: 'education-section', label: 'Education' }
+    { id: 'map-section', label: 'Map' }
   ];
 
   const triggerResumePrint = () => {
