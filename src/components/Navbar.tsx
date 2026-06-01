@@ -75,7 +75,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm' 
+        ? 'bg-[#030014]/80 backdrop-blur-md border-b border-white/5 py-3 shadow-lg shadow-black/20' 
         : 'bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,29 +83,29 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           
           {/* Brand/Signature */}
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center">
+            <div className="h-8 w-8 rounded-lg bg-indigo-600 shadow-[0_0_15px_rgba(99,102,241,0.5)] flex items-center justify-center">
               <Terminal className="w-4 h-4 text-white" />
             </div>
             <div>
-              <span className="font-display text-sm font-extrabold text-slate-900 tracking-tight block leading-none mb-0.5">
+              <span className="font-display text-sm font-extrabold text-white tracking-tight block leading-none mb-0.5">
                 {PERSONAL_INFO.name}
               </span>
-              <span className="font-mono text-[9px] text-indigo-600 font-bold tracking-wider leading-none">
+              <span className="font-mono text-[9px] text-indigo-400 font-bold tracking-wider leading-none">
                 12 Y_EXP.AI()
               </span>
             </div>
           </div>
 
           {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center gap-1 bg-slate-100/80 border border-slate-200/60 p-1 rounded-full">
+          <div className="hidden lg:flex items-center gap-1 bg-white/5 border border-white/10 p-1 rounded-full backdrop-blur-md">
             {menuItems.map(item => (
               <button
                 key={item.id}
                 onClick={() => handleScrollTo(item.id)}
                 className={`px-3.5 py-1 rounded-full font-sans text-xs font-semibold transition-all duration-300 cursor-pointer ${
                   activeSection === item.id 
-                    ? 'bg-white text-indigo-600 shadow-sm border border-slate-200/40' 
-                    : 'text-slate-500 hover:text-slate-800'
+                    ? 'bg-indigo-600/20 text-indigo-400 shadow-[0_0_15px_rgba(99,102,241,0.15)] border border-indigo-500/30' 
+                    : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -119,30 +119,30 @@ export default function Navbar({ onContactClick }: NavbarProps) {
               href={PERSONAL_INFO.githubUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-indigo-650 hover:bg-slate-100 rounded-lg transition-all"
+              className="p-2 text-zinc-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
               title="GitHub Profile"
             >
-              <Github className="w-4 h-4 text-slate-500 hover:text-indigo-600" />
+              <Github className="w-4 h-4" />
             </a>
             <a 
               href={PERSONAL_INFO.linkedinUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-indigo-650 hover:bg-slate-100 rounded-lg transition-all"
+              className="p-2 text-zinc-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
               title="LinkedIn Profile"
             >
-              <Linkedin className="w-4 h-4 text-slate-500 hover:text-indigo-600" />
+              <Linkedin className="w-4 h-4" />
             </a>
             <button
               onClick={triggerResumePrint}
-              className="text-xs font-mono font-bold text-slate-500 hover:text-slate-800 p-2 hover:bg-slate-100 rounded-lg transition-all flex items-center gap-1.5"
+              className="text-xs font-mono font-bold text-zinc-400 hover:text-white p-2 hover:bg-white/5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer"
             >
-              <Download className="w-3.5 h-3.5 text-slate-400" />
+              <Download className="w-3.5 h-3.5 text-zinc-500" />
               PRINT_CV
             </button>
             <button
               onClick={onContactClick}
-              className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-sans text-xs font-bold transition-all shadow-sm"
+              className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-sans text-xs font-bold transition-all shadow-[0_0_15px_rgba(99,102,241,0.35)] hover:shadow-[0_0_25px_rgba(99,102,241,0.55)] cursor-pointer"
             >
               Contact Me
             </button>
@@ -152,16 +152,16 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={triggerResumePrint}
-              className="p-2 text-slate-500 hover:text-indigo-600"
+              className="p-2 text-zinc-400 hover:text-indigo-400"
               title="Print CV"
             >
               <Download className="w-4 h-4" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-500 hover:text-indigo-600 focus:outline-none"
+              className="p-2 text-zinc-450 hover:text-indigo-400 focus:outline-none"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
             </button>
           </div>
 
@@ -170,7 +170,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 px-4 py-5 shadow-lg flex flex-col gap-4 animate-fadeIn">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#07070f] border-b border-white/5 px-4 py-5 shadow-2xl flex flex-col gap-4 animate-fadeIn">
           <div className="flex flex-col gap-1">
             {menuItems.map(item => (
               <button
@@ -178,8 +178,8 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                 onClick={() => handleScrollTo(item.id)}
                 className={`py-2 text-left px-3 rounded-lg font-sans text-xs font-semibold ${
                   activeSection === item.id 
-                    ? 'bg-indigo-50 text-indigo-600 font-bold border-l-2 border-indigo-600' 
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-indigo-600/10 text-indigo-400 font-bold border-l-2 border-indigo-500' 
+                    : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {item.label}
@@ -187,7 +187,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             ))}
           </div>
           
-          <div className="h-px bg-slate-100 my-1"></div>
+          <div className="h-px bg-white/5 my-1"></div>
           
           <div className="flex items-center justify-between px-3">
             <div className="flex gap-2">
@@ -195,7 +195,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                 href={PERSONAL_INFO.githubUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-50 hover:bg-slate-100 rounded-lg text-slate-500"
+                className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-zinc-400"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -203,7 +203,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                 href={PERSONAL_INFO.linkedinUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-50 hover:bg-slate-100 rounded-lg text-slate-500"
+                className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-zinc-400"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -211,7 +211,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             
             <button
               onClick={onContactClick}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-sans text-xs font-bold"
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-sans text-xs font-bold shadow-[0_0_15px_rgba(99,102,241,0.35)]"
             >
               Contact Me
             </button>
